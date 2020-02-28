@@ -1,0 +1,30 @@
+{
+  "name": "poi-version1",
+  "version": "1.0.0",
+  "description": "points of interest in ireland web application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "poi-version1"
+  },
+  "keywords": [
+    "poi",
+    "ireland"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "inert": "^5.1.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120
+  }
+}
