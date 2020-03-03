@@ -1,21 +1,35 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const dotenv = require('dotenv');
+require('dotenv').config();
 
 const server = Hapi.server({
     port: 3000,
     host: 'localhost'
 });
 
-server.bind({
-    users: {},
-    poi: [],
-    currentUser: {}
-});
+require('./app/models/db');
+
+
 
 async function init() {
     await server.register(require('@hapi/inert'));
     await server.register(require('@hapi/vision'));
+    await server.register(require('@hapi/cookie'));
+
+    server.validator(require('@hapi/joi'))
+
+    server.auth.strategy('session', 'cookie', {
+        cookie: {
+            name: process.env.cookie_name,
+            password: process.env.cookie_password,
+            isSecure: false
+        },
+        redirectTo: '/'
+    });
+
+    server.auth.default('session');
 
     server.views({
         engines: {

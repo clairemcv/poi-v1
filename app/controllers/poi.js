@@ -1,5 +1,9 @@
 'use strict';
 
+const PoiDetail = require('../models/poidetail');
+const User = require('../models/user');
+const Mongoose = require('mongoose');
+
 const Poi = {
     home: {
         handler: function(request, h) {
@@ -7,21 +11,52 @@ const Poi = {
         }
     },
     locations: {
-        handler: function(request, h) {
-            return h.view('locations', {
-                title: 'Your Points of Interest',
-                poi: this.poi
-            });
+        handler: async function(request, h)  {
+            try {
+                const poi = await PoiDetail.find().populate('creator').lean();
+                return h.view('locations', {
+                    title: 'Locations to Date',
+                    poi: poi
+                });
+            } catch (err) {
+                return h.view('main', { errors: [{ message: err.message }] });
+            }
         }
     },
-    createpoi: {
-        handler: function(request, h) {
-            let data = request.payload;
-            data.creator = this.currentUser;
-            this.poi.push(data);
-            return h.redirect('/locations');
+    createPoi: {
+        handler: async function (request, h) {
+            try {
+                const id = request.auth.credentials.id;
+                const user = await User.findById(id);
+                const data = request.payload;
+                const newPoiDetail = new PoiDetail({
+                    name: data.name,
+                    location: data.location,
+                    description: data.description,
+                    creator: user._id
+                });
+                await newPoiDetail.save();
+                return h.redirect('/locations');
+            } catch (err) {
+                return h.view('main', {errors: [{message: err.message}]});
+            }
+        }
+    },
+
+    deletePoi: {
+        handler: async function (request, h) {
+            try {
+                const id = request.auth.credentials.id;
+                const user = await User.findById(id);
+                const data = request.payload;
+                PoiDetail.findByIdAndDelete(ObjectId);
+                return h.redirect('/locations');
+            } catch (err) {
+                return h.view('main', {errors: [{message: err.message}]});
+            }
         }
     }
+
 };
 
 module.exports = Poi;

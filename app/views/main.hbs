@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{title}}</title>
-    <meta charset="UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.js"></script>
-</head>
-<body>
+
 {{> welcomemenu }}
     <section class="ui stacked segment">
         <div class="ui grid">
@@ -15,6 +6,7 @@
             <article class="ten wide column">
                 <header class="ui  header">Beautiful Points of Interest</header>
                 <p>Ireland really is a beautiful place</p>
+                {{> error }}
             </article>
         </div>
     </section>
