@@ -6,6 +6,7 @@
 const PoiDetail = require('../models/poidetail');
 const User = require('../models/user');
 const Category = require('../models/category');
+//const Joi = require('@hapi/joi');
 
 
 
@@ -36,15 +37,17 @@ const Poi = {
                 const user = await User.findById(id);
                 const data = request.payload;
 
-                const rawCategory = request.payload.category.lean();
+                const rawCategory = request.payload.category;
                 const category = await Category.findOne({
-                    title: rawCategory
-                });
+                   title: rawCategory
+               });
 
                 const newPoiDetail = new PoiDetail({
                     name: data.name,
                     location: data.location,
                     description: data.description,
+                    creator: user._id,
+                    category: category._id
 
                 });
                 await newPoiDetail.save();
@@ -55,23 +58,18 @@ const Poi = {
         }
     },
 
-    deletePoi: {
-       // auth: false,
+    deleteOne: {
+        auth: false,
         handler: async function(request, h) {
-            try {
-            const PoiDetail = request.payload;
             const id = request.auth.credentials.id;
-            const user = await User.findById(id).lean();
-            //let poiDetail = await.User.f;
-            PoiDetail.findByIdAndRemove({ id: user.id });
-            //await deletePoi.delete();
-            deletePoi() ;
-            //return h.redirect('/locations');
-            } catch (err) {
-                return h.view('main', {errors: [{message: err.message}]});
+            const poiDetail = await poiDetail.remove({ _id: request.params.id });
+            if (poiDetail) {
+                return { success: true };
             }
+            return h.view('main', {errors: [{message: err.message}]});
         }
     }
+
 
     };
 
