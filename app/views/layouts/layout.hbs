@@ -13,14 +13,11 @@
 </section>
 <script>
     $(document).ready(function() {
-        $(".ui.checkbox").click(function() {
-            $("#tick").prop("checked", true);
-            $("#tick").prop("unchecked", false);
-        });
+        $('.ui.dropdown').dropdown({ on: 'hover' });
+    });
         $('.message .close').on('click', function () {
             $(this).closest('.message').transition('fade');
         });
-    });
 </script>
 </body>
 </html>

@@ -16,13 +16,18 @@
                             <label>Description</label>
                             <input type="text" name="description" placeholder="Description" size="200">
                         </div>
-                        <div class="field">
-                            <div class="ui checkbox">
-                                <input type="checkbox" tabindex="0" class="hidden" id="tick">
-
-                                <label>I agree to the Terms and Conditions</label>
-                            </div>
+                        <div class="grouped inline fields">
+                            <h3> Select Category </h3>
+                            {{#each categories }}
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="category" value="{{title}}">
+                                        <label>{{title}}</label>
+                                    </div>
+                                </div>
+                            {{/each}}
                         </div>
+                        <div class="field">
                         <button class="ui blue submit button" type="submit">Submit</button>
                     </form>
                 </form>

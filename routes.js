@@ -3,6 +3,7 @@
 const Accounts = require('./app/controllers/accounts');
 const Poi = require('./app/controllers/poi');
 
+
 module.exports = [
     { method: 'GET', path: '/', config: Accounts.index },
     { method: 'GET', path: '/signup', config: Accounts.showSignup },
@@ -15,7 +16,8 @@ module.exports = [
 
     { method: 'GET', path: '/home', config: Poi.home },
     { method: 'GET', path: '/locations', config: Poi.locations },
-    { method: 'POST', path: '/deletePoi', config: Poi.locations},
+   // { method: 'DELETE', path: '/deletePoi/{id}', config: Poi.locations},
+    { method: 'POST', path: '/deletePoi', config: Poi.deletePoi },
     { method: 'POST', path: '/createPoi', config: Poi.createPoi },
 
 
