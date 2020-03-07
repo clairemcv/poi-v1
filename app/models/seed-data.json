@@ -45,9 +45,9 @@
     "two": {
       "name": "Cape Clear Island",
       "location": "Cork",
-      "description":"This Gaeltacht island is truly the Land’s End of SW Ireland. Mountainous, steep, and imposing, the island is home in winter to about 135 people or 110 voters and many more in summer. A ferry runs all year from Baltimore – twice daily in winter, more often in summer. In summer, there is also a ferry from Schull. The island has pubs, B&amp;Bs, restaurants, two hostels, a well-appointed campsite, windmills, very basic shops and provisions, and the most famous bird observatory in the country at V954-219. The island is extremely waisted, the waist being known as ‘The Waist’, with the North Harbour to landward, and South Harbour on the seaward side. The waist itself is high and narrow, and the roads in the vicinity of the waist are extremely steep, that giving access to the E end of the island being called the A1 and having a gradient of about 1:4. The co-operative club serves excellent meals and drink on the harbour, and Cotter’s Bar is also located here. There is a third wee pub up at the waist. A fourth, modern pub, Danny Mike’s, has been built just S of the waist, and excellent food may be had from breakfast to dinner time.",
+      "description":"This Gaeltacht island is truly the Land’s End of SW Ireland. Mountainous, steep, and imposing, the island is home in winter to about 135 people or 110 voters and many more in summer. A ferry runs all year from Baltimore – twice daily in winter, more often in summer. In summer, there is also a ferry from Schull. The island has pubs, B&Bs, restaurants, two hostels, a well-appointed campsite, windmills, very basic shops and provisions, and the most famous bird observatory in the country. The co-operative club serves excellent meals and drink on the harbour, and Cotter’s Bar is also located here. There is a third wee pub up at the waist. A fourth, modern pub, Danny Mike’s, has been built just S of the waist, and excellent food may be had from breakfast to dinner time.",
       "creator": "->users.mary",
-      "category": "->categories.three"
+      "category": "->categories.two"
     },
     "three": {
       "name": "Great Saltee Island",
@@ -81,7 +81,8 @@
       "name": "Belmullet",
       "location": "Mayo",
       "description":"Sheltered and easy access from Mayo’s western and northern coasts may be had through Belmullet. A lock-free canal is navigable to kayaks on at least the 2 hours either side of local HW. This gives easy passage from Blacksod Bay into Broad Haven. The canal has recently been made over. Belmullet is a most useful town on passage. A market town, all facilities are available.",
-      "creator": "->users.claire"
+      "creator": "->users.claire",
+      "category": "->categories.two"
     },
     "eight": {
       "name": "Crab Island",
@@ -114,7 +115,7 @@
     "twelve": {
       "name": "Tramore Bay",
       "location": "Waterford",
-      "description":"Tramore is a lovely tourist town and Tramore Bay is a “beach break” surfing paradise. Parking is at the beach. The beach surfs well in SWs, which makes it one of the more dependable locations in the country.  The “<em>trá mór</em>” itself is the long beach E of the town under the high sandhills of the Burrow, beautiful to walk, and very popular. Reminiscent of a <em>machaire</em> system, which it isn’t, technically, Tramore inner bay has all the attractions of such inner bays everywhere, strictly for the purist.",
+      "description":"Tramore is a lovely tourist town and Tramore Bay is a “beach break” surfing paradise. Parking is at the beach. The beach surfs well in SWs, which makes it one of the more dependable locations in the country.  The “trá mór” itself is the long beach E of the town under the high sandhills of the Burrow, beautiful to walk, and very popular. Reminiscent of a 'machaire' system, which it isn’t, technically, Tramore inner bay has all the attractions of such inner bays everywhere, strictly for the purist.",
       "creator": "->users.mary",
       "category": "->categories.one"
     }

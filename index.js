@@ -3,6 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const dotenv = require('dotenv');
 require('dotenv').config();
+const ImageStore = require('./app/utils/image-store');
 
 const server = Hapi.server({
     port: 3000,
@@ -29,6 +30,7 @@ async function init() {
         redirectTo: '/'
     });
 
+    ImageStore.configure(dkp4qizpl);
     server.auth.default('session');
 
     server.views({

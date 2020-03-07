@@ -63,8 +63,8 @@ const Poi = {
             try {
             const id = request.auth.credentials.id;
             const user = await User.findById(id);
-            const poi = request.payload;
-            await poi.findByIdAndDelete({id: user._id});
+            const poiDetail = request.payload;
+            await poiDetail.findByIdAndDelete({id: ObjectId});
             return h.redirect('/locations');
         } catch (err) {
             return h.view('main', {errors: [{message: err.message}]});
