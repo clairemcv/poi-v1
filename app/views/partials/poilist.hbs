@@ -3,9 +3,9 @@
         <aside class="two wide column">
             <img src="images/poi.jpg" class="ui small image">
         </aside>
-        <article class="ten wide column">
+        <article class="fifteen wide column">
             <table class="ui celled table segment">
-                <form action="/deleteOne" method="POST">
+                <form action="/deletePoi" method="POST">
                 <thead>
                 <tr>
                     <th>Created by</th>
@@ -24,7 +24,10 @@
                         <td> {{location}} </td>
                         <td> {{description}}</td>
                         <td> {{category.title}}</td>
-                        <td><button class="ui tiny red button">Delete</button></td>
+                        <td><a href="/deletePoi/{{poi}}" class="ui icon button">
+                                <i class="icon trash"></i>
+                            </a>
+                        </td>
                     </tr>
                   {{/each}}
                 </tbody>
@@ -32,3 +35,4 @@
         </article>
     </div>
 </section>
+

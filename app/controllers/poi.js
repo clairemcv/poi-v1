@@ -58,20 +58,24 @@ const Poi = {
         }
     },
 
-    deleteOne: {
-        auth: false,
+    deletePoi: {
         handler: async function(request, h) {
+            try {
             const id = request.auth.credentials.id;
-            const poiDetail = await poiDetail.remove({ _id: request.params.id });
-            if (poiDetail) {
-                return { success: true };
-            }
+            const user = await User.findById(id);
+            const poi = request.payload;
+            await poi.findByIdAndDelete({id: user._id});
+            return h.redirect('/locations');
+        } catch (err) {
             return h.view('main', {errors: [{message: err.message}]});
         }
     }
+    },
+
+    //TypeError: Cannot read property 'id' of null
 
 
-    };
+};
 
 //deletePoi.findByIdAndDelete({ id: user._id });
 

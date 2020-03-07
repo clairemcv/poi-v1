@@ -2,7 +2,7 @@
 
 const Accounts = require('./app/controllers/accounts');
 const Poi = require('./app/controllers/poi');
-//const poidetail = require('./app/models/poidetail');
+//const poiDetail = require('./app/models/poidetail');
 
 
 module.exports = [
@@ -17,8 +17,7 @@ module.exports = [
 
     { method: 'GET', path: '/home', config: Poi.home },
     { method: 'GET', path: '/locations', config: Poi.locations },
-    //{ method: 'DELETE', path: '/poidetail/{id}', config: poidetail.deleteOne },
-    { method: 'POST', path: '/deleteOne', config: Poi.deleteOne },
+    { method: 'GET', path: '/deletePoi', config: Poi.deletePoi },
     { method: 'POST', path: '/createPoi', config: Poi.createPoi },
 
 
