@@ -8,7 +8,7 @@ const Gallery = {
       try {
         const allImages = await ImageStore.getAllImages();
         return h.view('gallery', {
-          title: 'Cloudinary Gallery',
+          title: 'Gallery',
           images: allImages
         });
       } catch (err) {
@@ -23,10 +23,10 @@ const Gallery = {
         const file = request.payload.imagefile;
         if (Object.keys(file).length > 0) {
           await ImageStore.uploadImage(request.payload.imagefile);
-          return h.redirect('/locations');
+          return h.redirect('/gallery');
         }
         return h.view('gallery', {
-          title: 'Cloudinary Gallery',
+          title: 'Gallery',
           error: 'No file selected'
         });
       } catch (err) {

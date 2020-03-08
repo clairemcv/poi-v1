@@ -7,6 +7,7 @@ const PoiDetail = require('../models/poidetail');
 const User = require('../models/user');
 const Category = require('../models/category');
 //const Joi = require('@hapi/joi');
+const ImageStore = require('../utils/image-store');
 
 
 
@@ -70,6 +71,19 @@ const Poi = {
             return h.view('main', {errors: [{message: err.message}]});
         }
     }
+    },
+    gallery: {
+        handler: async function(request, h) {
+            try {
+                const allImages = await ImageStore.getAllImages();
+                return h.view('gallery', {
+                    title: 'Gallery',
+                    images: allImages
+                });
+            } catch (err) {
+                console.log(err);
+            }
+        }
     },
 
     //TypeError: Cannot read property 'id' of null
