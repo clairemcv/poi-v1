@@ -17,21 +17,24 @@ module.exports = [
 
     { method: 'GET', path: '/home', config: Poi.home },
     { method: 'GET', path: '/locations', config: Poi.locations },
+    //{ method: 'GET', path: '/yourpoi', config: Gallery.uploadFile},
     { method: 'GET', path: '/deletePoi/{id}', config: Poi.deletePoi },
     { method: 'POST', path: '/createPoi', config: Poi.createPoi },
 
-    { method: 'GET', path: '/', config: Gallery.index },
+   // { method: 'GET', path: '/', config: Gallery.index },
     { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
     { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage },
 
-    {
-        method: 'GET',
-        path: '/{param*}',
-        handler: {
-            directory: {
-                path: './public'
-            }
-        },
-        options: { auth: false }
-    }
+        {
+            method: 'GET',
+            path: '/{param*}',
+            handler: {
+                directory: {
+                    path: './public'
+                }
+            },
+            options: { auth: false }
+        }
+
+
 ];

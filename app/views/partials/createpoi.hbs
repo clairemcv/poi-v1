@@ -3,7 +3,7 @@
         <aside class="ui six wide column"><img src="images/poi.jpg" class="ui medium image" /></aside>
         <div class="ui ten wide column fluid form">
 
-                <form action="/createPoi" method="POST">
+             <form action="/createPoi" method="POST">
                     <form class="ui form">
                         <div class="field">
                             <label>Name</label>
@@ -29,10 +29,13 @@
                             {{/each}}
                         </div>
                         <div class="field">
-                        <button class="ui blue submit button" type="submit">Submit</button>
+                            <input type="submit" value="Upload" class="ui blue submit button">
                     </form>
                 </form>
             </div>
         </div>
 
-    </div>
+
+{{> upload }}
+
+</section>

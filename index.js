@@ -1,9 +1,10 @@
 'use strict';
 
-const Hapi = require('@hapi/hapi');
-const dotenv = require('dotenv');
-require('dotenv').config();
 const ImageStore = require('./app/utils/image-store');
+const Hapi = require('@hapi/hapi');
+//const dotenv = require('dotenv');
+require('dotenv').config();
+
 
 const server = Hapi.server({
     port: 3000,
@@ -12,6 +13,13 @@ const server = Hapi.server({
 
 require('./app/models/db');
 
+const dotenv = require('dotenv');
+
+const credentials = {
+    cloud_name: process.env.name,
+    api_key: process.env.key,
+    api_secret: process.env.secret
+};
 
 
 async function init() {
@@ -30,7 +38,8 @@ async function init() {
         redirectTo: '/'
     });
 
-    ImageStore.configure(dkp4qizpl);
+    ImageStore.configure(credentials);
+
     server.auth.default('session');
 
     server.views({
